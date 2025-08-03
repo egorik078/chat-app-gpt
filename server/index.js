@@ -1,4 +1,6 @@
 const express = require('express');
+import dotenv from "dotenv";
+dotenv.config();
 const http = require('http');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -13,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB ulanish
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
